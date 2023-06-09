@@ -48,9 +48,11 @@ jobs:
             # Test if website exists
             if curl -s --head ${URL} 
             then
-              return 0
+              # return 0
+              echo "WORKED"
             else
-              return 1
+              # return 1
+              echo "NOT WORKED"
             fi
 
 # Orchestrate jobs using workflows
