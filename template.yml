@@ -1,5 +1,4 @@
 # Exercise - Rollback
-AWSTemplateFormatVersion: 2010-09-09
 Description: cloudFormationCustom
 Resources:
   EC2Instance:
