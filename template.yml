@@ -5,7 +5,8 @@ Resources:
   EC2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
-      SecurityGroups: !Ref InstanceSecurityGroup
+      SecurityGroups:
+        - !Ref InstanceSecurityGroup
       KeyName: EC2-web01-prj2
       ImageId: 'ami-09e67e426f25ce0d7' # you may need to find out what instance types are available in your region - use https://cloud-images.ubuntu.com/locator/ec2/
       InstanceType: t3.micro
