@@ -60,11 +60,11 @@ jobs:
             # Test if website exists
             if curl -s --head ${URL} 
             then
-              # return 0
-              echo "WORKED"
+              return 1
+              # echo "WORKED"
             else
-              # return 1
-              echo "NOT WORKED"
+              return 0
+              # echo "NOT WORKED"
             fi
       - destroy_environment
 
@@ -74,5 +74,5 @@ workflows:
   my-workflow:
     jobs:
       # - create_infrastructure
-      # - configure_infrastructure
+      - configure_infrastructure
       - smoke_test
