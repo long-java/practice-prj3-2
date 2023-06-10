@@ -79,7 +79,7 @@ jobs:
             aws cloudformation deploy \
             --template-file bucket.yml \
             --stack-name stack-create-bucket-${CIRCLE_WORKFLOW_ID:0:7} \
-            --parameter-overrides MyBucketName="mybucket-${CIRCLE_WORKFLOW_ID:0:7}"
+            --parameter-overrides MyBucketName="luci-fer-bucket1"
 
   get_last_deployment_id:
     docker:
@@ -109,7 +109,7 @@ jobs:
             aws cloudformation deploy \
             --template-file cloudfront.yml \
             --stack-name production-distro \
-            --parameter-overrides PipelineID="mybucket-${CIRCLE_WORKFLOW_ID:0:7}" 
+            --parameter-overrides PipelineID="luci-fer-bucket1" 
 
   clean_up_old_front_end:
     docker:
